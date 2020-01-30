@@ -7,6 +7,15 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class='content'>
+
+      {% if error %}
+        <p class='error'>{{ error }}</p>
+      {% endif %}
+
+      <form method='post'>
+    <input type='text' name='city' placeholder="City here">
+  </form>
     <div class='place'>
       {{ weather_data[0] }}
     </div>
@@ -18,6 +27,10 @@
     </div>
     <div class='temp'>
       {{ weather_data[2] }}
+      <div class='icondeg'>
+      <span>°C</span>
+      <img src='{{ weather_data[6] }}' class='icon'>
+    </div>
     </div>
     <div class='humid'>
       {{ weather_data[3] }}
@@ -25,6 +38,7 @@
     <div class='wind'>
       {{ weather_data[4] }}
     </div>
-    <img src='{{ weather_data[6] }}'>
+
+  </div>
   </body>
 </html>
