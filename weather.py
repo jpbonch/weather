@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from pyowm import OWM
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -10,16 +11,21 @@ owm = OWM(API_key)
 @app.route('/')
 def index():
 
-    obs = owm.weather_at_place('London')
+    place = 'London'
+    obs = owm.weather_at_place(place)
     w = obs.get_weather()
 
-    temp = str(w.get_temperature(unit='celsius')['temp']) + '°C'
-    humid = str(w.get_humidity()) + '%'
-    wind = str(float(w.get_wind()['speed']) * 3.6) + 'km/h'
+    time = datetime.now().strftime("%A, %H:%M")
+
+    icon = w.get_weather_icon_url()
+
+    temp = str(int(w.get_temperature(unit='celsius')['temp'])) + '°C'
+    humid = 'humidity: ' + str(w.get_humidity()) + '%'
+    wind = 'wind speed: ' + str(float(w.get_wind()['speed']) * 3.6) + 'km/h'
     status = w.get_detailed_status()
 
     weather_data = []
-    weather_data.extend([temp, humid, wind, status])
+    weather_data.extend([place, time, temp, humid, wind, status, icon])
 
     return render_template('index.html', weather_data=weather_data)
 

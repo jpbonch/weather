@@ -1,0 +1,39 @@
+
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(198, 198, 198);
+}
+
+body{
+  background-color: RGB(46, 48, 49);
+}
+
+.place{
+  margin-top: 100px;
+  margin-left: 100px;
+  font-size: 30px;
+}
+
+.time{
+  margin-left: 100px;
+}
+
+.temp{
+  font-size: 80px;
+  margin-left: 100px;
+}
+
+.humid{
+  margin-left: 100px;
+  display: inline;
+}
+
+.wind{
+  display: inline;
+  margin-left: 100px;
+}
+
+.status{
+  margin-left: 100px;
+}
