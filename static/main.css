@@ -24,10 +24,9 @@ input{
 }
 
 .content{
-  transform: translate(-50%, -80%);
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 15%;
+  left: 22%;
   border-width: thin;
   border-color: rgb(198, 198, 198);
   border-style: solid;
