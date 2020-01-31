@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-owm_API_key = api_key_here
+owm_API_key = 'fb58b1ad50f20581ddeb9b35254bf1b4'
 owm = OWM(owm_API_key)
 
 def generate_weather(city_name):
