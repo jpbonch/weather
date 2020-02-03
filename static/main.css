@@ -17,7 +17,7 @@ span{
 input{
   border-radius: 10px;
   border-style: solid;
-  width: 185px;
+  width: 460px;
   padding-left: 5px;
   background-color: transparent;
   height: 20px;
@@ -25,6 +25,7 @@ input{
 
 .content{
   margin: 0 auto;
+  overflow: scroll;
   margin-top: 5%;
   border-width: thin;
   border-color: rgb(198, 198, 198);
@@ -33,7 +34,7 @@ input{
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 220px;
+  width: 500px;
 }
 
 .place{
