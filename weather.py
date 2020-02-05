@@ -25,17 +25,16 @@ def generate_weather(city_name):
                 return weather_data
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     error = ''
     weather = generate_weather('London')
-    if request.method == 'POST':
-        city = request.form.get('city', 'London')
-        city = city.title()
-        try:
-            weather = generate_weather(city)
-        except:
-            error = 'City not found'
+    city = request.args.get('city', 'London')
+    city = city.title()
+    try:
+        weather = generate_weather(city)
+    except:
+        error = 'City not found'
 
 
     return render_template('index.html', weather_data=weather, error=error)
