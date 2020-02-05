@@ -31,6 +31,7 @@ def index():
     weather = generate_weather('London')
     if request.method == 'POST':
         city = request.form.get('city', 'London')
+        city = city.title()
         try:
             weather = generate_weather(city)
         except:
